@@ -15,7 +15,7 @@ class MoviePost(models.Model):
 
 class Genre(models.Model):
     name = models.CharField(max_length=128)
-    posts = models.CharField(models.ForeignKey(MoviePost))
+    posts = models.ForeignKey("MoviePost", on_delete=models.CASCADE)
 
     def __str__(self):
         return self.name
@@ -23,7 +23,7 @@ class Genre(models.Model):
 #Spoken Language
 class Language(models.Model):
     name = models.CharField(max_length=32)
-    posts = models.CharField(models.ForeignKey(MoviePost))
+    posts = models.ForeignKey("MoviePost", on_delete=models.CASCADE)
 
     def __str__(self):
         return self.name
