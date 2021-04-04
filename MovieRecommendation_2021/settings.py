@@ -52,6 +52,7 @@ INSTALLED_APPS = [
     # end social providers
 
     "accounts",
+    "posts",
 ]
 
 MIDDLEWARE = [

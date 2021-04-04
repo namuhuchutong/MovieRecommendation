@@ -9,10 +9,16 @@
 </head>
 
 <body>
+  <h1>THIS IS MAIN PAGE!</h1>
+  {% if user.is_authenticated %}
+    <p>{{ user.username }}</p>
+    <a href="{% url 'logout' %}">logout</a>
+  {% else %}
+    <a href="{% url 'login' %}">login</a>
+    <br>
+    <a href="{% url 'signup' %}">signup</a>
+  {% endif %}
   {% block content %}
   {% endblock %}
-  {% if user.is_authenticated %}
-  <p>{{ user.username }}</p>
-  {% endif %}
 </body>
 </html>

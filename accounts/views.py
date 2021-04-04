@@ -31,3 +31,8 @@ def login(request):
             return render(request, "accounts/login.html", {"error" : "username or password is not correct"})
     else:
         return render(request, "accounts/login.html")
+
+def logout(request):
+    #remember logout() doesn't throw any errors if the user wasn’t logged in.
+    auth.logout(request)
+    return redirect("home")
